@@ -32,6 +32,3 @@ class PledgeSerializer(serializers.ModelSerializer):
         model = Pledge
         fields = ['id','amount','comment','anonymous', 'project','supporter']
         read_only_fields = ['id', 'supporter']
-
-# class ProjectDetailSerializer(ProjectSerializers):
-#     pledges = PledgeSerializer(many=True, read_only=True

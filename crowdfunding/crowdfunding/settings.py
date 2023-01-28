@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "FALSE") !="False"
 
-ALLOWED_HOSTS = ['shy-rain-4768.fly.dev']
+ALLOWED_HOSTS = ['shy-rain-4768.fly.dev', '127.0.0.1']
 CORS_ALLOW_ALL_ORIGNS = True
 CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']
 
