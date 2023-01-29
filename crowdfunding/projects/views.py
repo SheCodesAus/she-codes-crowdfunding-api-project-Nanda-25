@@ -4,7 +4,7 @@ from rest_framework.response import Response
 # from .models import Project, Pledge
 from django.http import Http404
 from rest_framework import status, generics, permissions
-from .permissions import IsOwnerOrReadOnly
+from .permissions import IsOwnerOrReadOnly, IsSupporterOrReadOnly
 from .models import Project, Pledge
 from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer
 from django_filters.rest_framework import DjangoFilterBackend
@@ -69,3 +69,10 @@ class ProjectListFilter(generics.ListAPIView):
 	serializer_class = ProjectSerializer
 	filter_backends = [DjangoFilterBackend]
 	filterset_fields = ['owner', 'date_created', 'is_open']
+
+class PledgeDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly, IsSupporterOrReadOnly
+    ]
+    queryset = Pledge.objects.all()
+    serializer_class = PledgeSerializer
