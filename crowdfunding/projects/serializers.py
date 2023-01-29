@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Project, Pledge
+from users.serializers import CustomUserSerializer
 
 class ProjectSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()

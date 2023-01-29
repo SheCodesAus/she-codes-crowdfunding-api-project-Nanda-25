@@ -35,7 +35,7 @@ A website where people can tell their history/dreams and ask support to pay thei
   - [X] Create
   - [X] Retrieve
   - [x] Update
-  - [ ] Destroy
+  - [x] Destroy
 - Pledge
   - [X] Create
   - [X] Retrieve
@@ -45,7 +45,7 @@ A website where people can tell their history/dreams and ask support to pay thei
   - [X] Create
   - [X] Retrieve
   - [x] Update
-  - [ ] Destroy
+  - [x] Destroy
 
 ### Implement suitable permissions
 
@@ -57,8 +57,8 @@ A website where people can tell their history/dreams and ask support to pay thei
   - [x] Limit who can update
   - [ ] Limit who can delete
 - Pledge
-  - [ ] Limit who can create
-  - [ ] Limit who can retrieve
+  - [x] Limit who can create
+  - [x] Limit who can retrieve
   - [x] Limit who can update
   - [ ] Limit who can delete
 - User
@@ -68,7 +68,7 @@ A website where people can tell their history/dreams and ask support to pay thei
 
 ### Implement relevant status codes
 
-- [ ] Get returns 200
+- [x] Get returns 200
 - [x] Create returns 201
 - [x] Not found returns 404
 
