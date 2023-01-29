@@ -7,6 +7,7 @@ urlpatterns = [
     path('projects/filter', views.ProjectListFilter.as_view(), name="project-list-filter"),
     path('projects/<int:pk>/', views.ProjectDetail.as_view(),name='project-detail'),
     path('pledges/', views.PledgeList.as_view(), name="pledge-list"),
+    path('projects/<int:pk>/bookmarked/', views.LikeListCreate.as_view(), name='project-bookmarked'),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

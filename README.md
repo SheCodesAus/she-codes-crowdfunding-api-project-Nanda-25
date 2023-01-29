@@ -55,7 +55,7 @@ A website where people can tell their history/dreams and ask support to pay thei
   - [x] Limit who can create
   - [x] Limit who can retrieve
   - [x] Limit who can update
-  - [ ] Limit who can delete
+  - [x] Limit who can delete
 - Pledge
   - [x] Limit who can create
   - [x] Limit who can retrieve
@@ -84,13 +84,13 @@ A website where people can tell their history/dreams and ask support to pay thei
 
 - [x] {Filter}
 
-You can filter according to your preferences
+You can filter according to your preferences: 'owner', 'date_created' and 'is_open'
 
-- [ ] {Title Feature 2}
+- [x] {Password Change}
 
 {{ description of feature 2 }}
 
-- [ ] {Title Feature 3}
+- [x] {Favourite project}
 
 {{ description of feature 3 }}
 

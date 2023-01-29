@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from users.models import CustomUser
 
 User = get_user_model()
 
@@ -17,6 +18,7 @@ class Project(models.Model):
         on_delete=models.CASCADE, 
         related_name='owner_projects'
         )
+bookmarked_by = models.ManyToManyField(CustomUser, related_name='bookmarked_projects')
 
 class Pledge(models.Model):
     amount = models.IntegerField()

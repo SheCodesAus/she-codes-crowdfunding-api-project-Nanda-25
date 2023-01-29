@@ -45,3 +45,4 @@ class PledgeSerializer(serializers.ModelSerializer):
 
 class ProjectDetailSerializer(ProjectSerializer):
     pledges = PledgeSerializer(many=True, read_only=True)
+    bookmarked_by = CustomUserSerializer(many=True, read_only=True)
