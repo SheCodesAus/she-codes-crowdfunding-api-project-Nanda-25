@@ -6,7 +6,7 @@ from django.http import Http404
 from rest_framework import status, generics, permissions
 from .permissions import IsOwnerOrReadOnly
 from .models import Project, Pledge
-from .serializers import ProjectSerializer, PledgeSerializer
+from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer
 
 # Create your views here.
 class ProjectList(APIView):
@@ -40,13 +40,13 @@ class ProjectDetail(APIView):
 
     def get(self, request, pk):
         project = self.get_object(pk)
-        serializer = ProjectSerializer(project)
+        serializer = ProjectDetailSerializer(project)
         return Response(serializer.data)
     
     def put(self, request, pk):
         project = self.get_object(pk)
         data = request.data
-        serializer = ProjectSerializer(
+        serializer = ProjectDetailSerializer(
             instance=project,
             data=data,
             partial=True

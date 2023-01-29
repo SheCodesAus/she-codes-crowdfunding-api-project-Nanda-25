@@ -14,8 +14,6 @@ class ProjectSerializer(serializers.Serializer):
     def create(self, validated_data):
         return Project.objects.create(**validated_data)
 
-
-
     def update(self, instance, validated_data):
             instance.title = validated_data.get('title', instance.title)
             instance.description = validated_data.get('description',instance.description)
@@ -28,7 +26,21 @@ class ProjectSerializer(serializers.Serializer):
             return instance
 
 class PledgeSerializer(serializers.ModelSerializer):
+    suporter = serializers.SerializerMethodField()
+
     class Meta:
         model = Pledge
         fields = ['id','amount','comment','anonymous', 'project','supporter']
         read_only_fields = ['id', 'supporter']
+
+    def get_supporter(self, obj):
+        if obj.anonymous:
+            return None
+        else:
+            return obj.supporter.username
+            
+    def create(self, validated_data):
+        return Pledge.objects.create(**validated_data)
+
+class ProjectDetailSerializer(ProjectSerializer):
+    pledges = PledgeSerializer(many=True, read_only=True)
