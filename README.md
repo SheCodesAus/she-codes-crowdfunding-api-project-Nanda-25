@@ -40,7 +40,7 @@ A website where people can tell their history/dreams and ask support to pay thei
   - [X] Create
   - [X] Retrieve
   - [x] Update
-  - [ ] Destroy
+  - [ ] Destroy - Deleting a pledge will not be allowed
 - User
   - [X] Create
   - [X] Retrieve
@@ -60,11 +60,11 @@ A website where people can tell their history/dreams and ask support to pay thei
   - [x] Limit who can create
   - [x] Limit who can retrieve
   - [x] Limit who can update
-  - [ ] Limit who can delete
+  - [ ] Limit who can delete - Not allowed to be done
 - User
-  - [ ] Limit who can retrieve
-  - [ ] Limit who can update
-  - [ ] Limit who can delete
+  - [ ] Limit who can retrieve - No restriction is necessary
+  - [ ] Limit who can update - No restriction is necessary
+  - [ ] Limit who can delete - No restriction is necessary
 
 ### Implement relevant status codes
 
