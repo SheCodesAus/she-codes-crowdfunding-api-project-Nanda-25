@@ -1,6 +1,6 @@
-Scholasrship collab
+Istudy
 
-A website where people can tell their history/dreams and ask support to pay their educational costs. The idea is to help people to change their life's through study. The users will be people in need of financial support to start/complete their educational development. 
+A website where people can tell their history/dreams and ask support to pay their educational costs. The idea is to help people to change their lives through study. The users will be people in need of financial support to start/complete their educational development. 
 
 ## Features
 
@@ -88,11 +88,11 @@ You can filter according to your preferences: 'owner', 'date_created' and 'is_op
 
 - [x] {Password Change}
 
-{{ description of feature 2 }}
+Allow password change
 
 - [x] {Favourite project}
 
-{{ description of feature 3 }}
+User can bookmark projects
 
 ### External libraries used
 
@@ -105,7 +105,7 @@ You can filter according to your preferences: 'owner', 'date_created' and 'is_op
 - [x] A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
 - [x] A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
 - [x] A screenshot of Insomnia, demonstrating a token being returned.
-- [ ] Your refined API specification and Database Schema.
+- [x] Your refined API specification and Database Schema.
 
 ### Step by step instructions for how to register a new user and create a new project (i.e. endpoints and body data).
 
@@ -125,12 +125,12 @@ curl --request POST \
 2. Sign in User
 
 ```shell
-curl --request POST \
+ccurl --request POST \
   --url http://127.0.0.1:8000/api-token-auth/ \
   --header 'Content-Type: application/json' \
   --data '{
-	"username": "testuser",
-	"password": "not-my-password"
+	"username": "admin",
+	"password": "admin"
 }'
 ```
 
@@ -139,14 +139,14 @@ curl --request POST \
 ```shell
 curl --request POST \
   --url http://127.0.0.1:8000/projects/ \
-  --header 'Authorization: Token 5b8c82ec35c8e8cb1fac24f8eb6d480a367f322a' \
+  --header 'Authorization: Token f53e8987a5fe3b0cc9de1314ed3a6b39f96e63c7' \
   --header 'Content-Type: application/json' \
-  --data '{
-	"title": "Donate a cat",
-	"description": "Please help, we need a cat for she codes plus, our class lacks meows.",
-	"goal": 1,
-	"image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Dollar_bill_and_small_change.jpg",
-	"is_open": true,
-	"date_created": "2023-01-28T05:53:46.113Z"
-}'
+  --data '	{
+		"title": "Donate a mouse",
+		"description": "cheese",
+		"goal": 1,
+		"image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Dollar_bill_and_small_change.jpg",
+		"is_open": true,
+		"date_created": "2023-01-29T09:29:44.962Z"
+	}'
 ```
