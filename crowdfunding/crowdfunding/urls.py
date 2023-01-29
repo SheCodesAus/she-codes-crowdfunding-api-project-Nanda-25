@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
+from django.http import JsonResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +26,9 @@ urlpatterns = [
     path("", include('projects.urls'))
 ]
 
+def custom404(request, exception=None):
+    return JsonResponse({
+        'status_code': 404,
+        'error': 'Try again'
+    })
+handler404 = custom404

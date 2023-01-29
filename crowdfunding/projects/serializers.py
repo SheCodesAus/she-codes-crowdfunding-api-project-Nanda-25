@@ -26,7 +26,7 @@ class ProjectSerializer(serializers.Serializer):
             return instance
 
 class PledgeSerializer(serializers.ModelSerializer):
-    suporter = serializers.SerializerMethodField()
+    supporter = serializers.SerializerMethodField()
 
     class Meta:
         model = Pledge
@@ -38,7 +38,7 @@ class PledgeSerializer(serializers.ModelSerializer):
             return None
         else:
             return obj.supporter.username
-            
+
     def create(self, validated_data):
         return Pledge.objects.create(**validated_data)
 
