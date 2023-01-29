@@ -7,6 +7,7 @@ from rest_framework import status, generics, permissions
 from .permissions import IsOwnerOrReadOnly
 from .models import Project, Pledge
 from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 class ProjectList(APIView):
@@ -62,3 +63,9 @@ class PledgeList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(supporter=self.request.user)
+
+class ProjectListFilter(generics.ListAPIView):
+	queryset = Project.objects.all()
+	serializer_class = ProjectSerializer
+	filter_backends = [DjangoFilterBackend]
+	filterset_fields = ['owner', 'date_created', 'is_open']
