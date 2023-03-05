@@ -27,12 +27,9 @@ SECRET_KEY = os.environ.get(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "FALSE") !="False"
-DEBUG = False
 
-ALLOWED_HOSTS = ['shy-rain-4768.fly.dev', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGNS = True
-CSRF_TRUSTED_ORIGINS = ['https://*.fly.dev']
-
 
 # Application definition
 
@@ -92,7 +89,6 @@ WSGI_APPLICATION = 'crowdfunding.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
-		'NAME': BASE_DIR / 'db.sqlite3',
 		'NAME': os.environ.get('DATABASE_DIR', BASE_DIR / 'db.sqlite3'),
 	}
 }
